@@ -1,6 +1,7 @@
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import os from "os";
 import { v4 as uuidv4 } from "uuid";
 import { fileURLToPath } from "url";
 
@@ -15,7 +16,12 @@ const ALLOWED_TYPES = {
 };
 
 const MAX_SIZE_MB = parseInt(process.env.MAX_FILE_SIZE_MB || "5");
-export const UPLOAD_DIR = path.resolve(process.env.UPLOAD_DIR || "./uploads");
+
+// Use UPLOAD_DIR env var if set, otherwise fall back to a subfolder
+// inside the OS temp directory — always writable on any platform
+export const UPLOAD_DIR = process.env.UPLOAD_DIR
+    ? path.resolve(process.env.UPLOAD_DIR)
+    : path.join(os.tmpdir(), "cpa-uploads");
 
 if (!fs.existsSync(UPLOAD_DIR)) {
     fs.mkdirSync(UPLOAD_DIR, { recursive: true });
