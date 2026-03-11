@@ -53,18 +53,20 @@ export const signUp = async (req, res, next) => {
             const accessToken = signAccessToken(payload);
             const refreshToken = signRefreshToken(payload);
 
+            // Replace every res.cookie() call with this pattern:
+
             res.cookie("accessToken", accessToken, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "strict",
-                maxAge: 24 * 60 * 60 * 1000,
+                secure:   process.env.NODE_ENV === "production",
+                sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+                maxAge:   1000 * 60 * 60 * 24,
             });
 
             res.cookie("refreshToken", refreshToken, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "strict",
-                maxAge: 7 * 24 * 60 * 60 * 1000,
+                secure:   process.env.NODE_ENV === "production",
+                sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+                maxAge:   1000 * 60 * 60 * 24 * 7,
             });
 
             const safeEmployer = newEmployer.toObject();
@@ -126,19 +128,21 @@ export const logIn = async (req, res, next) => {
         const accessToken = signAccessToken(payload);
         const refreshToken = signRefreshToken(payload);
 
+        // Replace every res.cookie() call with this pattern:
+
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
-            secure:false,
-            sameSite: "strict",
-            maxAge: 1000 * 60 * 60 * 24
+            secure:   process.env.NODE_ENV === "production",
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+            maxAge:   1000 * 60 * 60 * 24,
         });
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure:false,
-            sameSite: "strict",
-            maxAge: 1000 * 60 * 60 * 24 * 7
-        })
+            secure:   process.env.NODE_ENV === "production",
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+            maxAge:   1000 * 60 * 60 * 24 * 7,
+        });
 
         const safeEmployer = employer.toObject();
         delete safeEmployer.password
@@ -158,8 +162,16 @@ export const logIn = async (req, res, next) => {
 }
 
 export const logOut = (req, res) => {
-    res.clearCookie("accessToken").clearCookie("refreshToken").json({ message: "Logged out successfully" });
-}
+    const cookieOptions = {
+        httpOnly: true,
+        secure:   process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+    };
+    res
+        .clearCookie("accessToken", cookieOptions)
+        .clearCookie("refreshToken", cookieOptions)
+        .json({ message: "Logged out successfully" });
+};
 
 // Refresh token endpoint
 export const refreshToken = async (req, res) => {
@@ -177,10 +189,10 @@ export const refreshToken = async (req, res) => {
         const newAccessToken = signAccessToken({ id: decoded.id });
 
         res.cookie("accessToken", newAccessToken, {
-            secure: false,
             httpOnly: true,
-            sameSite: "strict",
-            maxAge: 1000 * 60 * 60 * 24
+            secure:   process.env.NODE_ENV === "production",
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+            maxAge:   1000 * 60 * 60 * 24,
         });
 
         res.status(200).json({
