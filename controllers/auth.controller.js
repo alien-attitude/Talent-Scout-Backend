@@ -58,14 +58,14 @@ export const signUp = async (req, res, next) => {
             res.cookie("accessToken", accessToken, {
                 httpOnly: true,
                 secure:   process.env.NODE_ENV === "production",
-                sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+                sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
                 maxAge:   1000 * 60 * 60 * 24,
             });
 
             res.cookie("refreshToken", refreshToken, {
                 httpOnly: true,
                 secure:   process.env.NODE_ENV === "production",
-                sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+                sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
                 maxAge:   1000 * 60 * 60 * 24 * 7,
             });
 
@@ -133,14 +133,14 @@ export const logIn = async (req, res, next) => {
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
             secure:   process.env.NODE_ENV === "production",
-            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+            sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
             maxAge:   1000 * 60 * 60 * 24,
         });
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
             secure:   process.env.NODE_ENV === "production",
-            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+            sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
             maxAge:   1000 * 60 * 60 * 24 * 7,
         });
 
@@ -165,7 +165,7 @@ export const logOut = (req, res) => {
     const cookieOptions = {
         httpOnly: true,
         secure:   process.env.NODE_ENV === "production",
-        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
     };
     res
         .clearCookie("accessToken", cookieOptions)
@@ -191,7 +191,7 @@ export const refreshToken = async (req, res) => {
         res.cookie("accessToken", newAccessToken, {
             httpOnly: true,
             secure:   process.env.NODE_ENV === "production",
-            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+            sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
             maxAge:   1000 * 60 * 60 * 24,
         });
 
