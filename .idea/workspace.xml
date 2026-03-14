@@ -22,18 +22,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "alien-attitude"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;alien-attitude&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/alien-attitude/Talent-Scout-Backend.git",
-    "accountId": "6a97f6f7-95d9-4d60-b5b7-348c2feb2184"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/alien-attitude/Talent-Scout-Backend.git&quot;,
+    &quot;accountId&quot;: &quot;6a97f6f7-95d9-4d60-b5b7-348c2feb2184&quot;
   }
-}]]></component>
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -47,6 +50,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
@@ -98,7 +102,8 @@
       <workItem from="1773002991468" duration="6741000" />
       <workItem from="1773093115367" duration="3646000" />
       <workItem from="1773112508868" duration="3360000" />
-      <workItem from="1773179066339" duration="15996000" />
+      <workItem from="1773179066339" duration="17019000" />
+      <workItem from="1773266823149" duration="2653000" />
     </task>
     <task id="LOCAL-00001" summary="few changes">
       <option name="closed" value="true" />
@@ -116,7 +121,31 @@
       <option name="project" value="LOCAL" />
       <updated>1773194813157</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="few changes">
+      <option name="closed" value="true" />
+      <created>1773207897274</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773207897274</updated>
+    </task>
+    <task id="LOCAL-00004" summary="few changes">
+      <option name="closed" value="true" />
+      <created>1773267807364</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773267807364</updated>
+    </task>
+    <task id="LOCAL-00005" summary="few changes">
+      <option name="closed" value="true" />
+      <created>1773272008098</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773272008098</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,22 +154,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="few changes" />
     <option name="LAST_COMMIT_MESSAGE" value="few changes" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/auth.controller.js</url>
-          <line>164</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/auth.controller.js</url>
-          <line>192</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
